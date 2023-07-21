@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      body{background-color: blanchedalmond;}
+    </style>
+</head>
+
+<body>
+    <h2> Q1 " </h2>
+        <pre>
+            <b>
+          function counter(){
+        var counter = 0;
+    
+        function IncreaseCounter() {
+            return counter += 1;
+        };
+    
+        return IncreaseCounter;
+    }
+    
+    var counter = counter();
+    alert(counter());
+    alert(counter());
+    alert(counter());
+    alert(counter());"
+            </b>
+        </pre>
+
+<h2>Ans</h2>
+<h3>Output</h3>
+<b style="color: red;">1,2,3,4</b>
+<p><b>Reason :</b>first we creae one function and inside this function create one variable and inside this function create one more function and return it so first we call outer function and store in one variable after than we call thats variable as a function so this function directly call our second function . </p>
+<p>first counter value is 0 in first function and thair value is update again and new value of its 1 so first call funstion counter and counter value is 1 and we call inside function and thair value increase 1 so output is 1,2,3,4,5</p>
+    
+
+<h2>Q2</h2>
+<pre>
+    <b>"let count = 0;
+        (function () {
+          if (count === 0) {
+            let count = 1;
+            console.log(count); // What is logged?
+          }
+          console.log(count); // What is logged?
+        })();"</b>
+</pre>
+<h2>Ans</h2>
+<h3>Output</h3>
+<b style="color: red;">1,0</b>
+<p><b>Reason:</b>1 first we give here variable and after than we give here IIFE(Immmediatly invoke function expression)function here and inside this we give one condition when our condition is true so our variable value is increase and console it .after we also print one more console  outside of this consition.</p>
+<ol>
+  <li>first variable name count value is =0</li>
+<li>second we create one function and give condition here if count value is equal to 0 so this condition is satisfy so  we enter inside the condition and count value is changed here and now count value is 1 and we console it so first line of output is 1</li>
+<li>after this condition is end and we are also give console.log and thair count value is outside the condition so its find the value of count to the global scope so thair value of count is 0</li>
+</ol>
+
+
+
+<h2>Q3</h2>
+<pre>
+  <b>
+    for (var i = 0; i <3; i++) {
+      setTimeout(function log() {
+        console.log(i);
+      }, 1000);
+    };
+  </b></pre>
+  <h2>Ans</h2>  
+<h3>Output</h3>
+<b style="color: red;">3,3,3</b>
+<p><b>Reason:</b>we are create here one for loop and inside this take var variable i inside this loop take setTimeout out  function and console the value of i after 1 sec ,we give here 1000ms it means our code exucate after  1s </p>
+<ol><li>when first ittretion is start i value is 0 and then its condition is true its go inside the loop and functionis will run and i value is now 0 same thing repeated when i < 3 after than 4th itretion is start and i value is 3 so its false so its come outside the for loop and 3 value is print 3 time  </li></ol>
+
+
+
+<h2>Q4  Write a code to calculate area of a rectangle using inner function. In this case outer function should accept parameter length and inner function should accept parameter breadth.</h2>
+<h2>Ans</h2>
+<pre><b>
+  var findarea= function(l){
+    return function (b){
+    console.log(l*b)
+
+   }
+  
+ }
+ var area=findarea(3)
+ area(4)
+</b></pre>
+<p><b>Reason:</b>first we create here one function findarea and we give parameter l here and inside this create one more function and thair parameter is b after than we using a formula of find rectangle area l*b and console it .  </p>
+<p>we call the first function here and store it one valriable and then use this variable as function to call inside function.</p>
+
+
+
+
+
+
+<h2>Q5 Take a variable in outer function and create an inner function to increase the counter every time it is called</h2>
+<h2>Ans</h2>
+<pre> <b>function counter(){
+       var count=0;
+       function increase(){
+       return  count +=1
+      }
+      return increase;
+    }
+    var count=counter()
+   count()
+   count()
+   count()</b></pre>  
+<h3>Output</h3>
+<b style="color: red;">1,2,3</b>
+<p><b>Reason :</b>we create function here and inside this create one valiable is  count and thair value is 0 inside this create one more funstion and thair increase the value of count by 1 after we return the function .than we call the outer function counter and store it one variable then we use this same variable as a function to call a inside function.</p>
+
+
+
+
+
+<!-- question6>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
+<h2>Q6 "Print Output</h2>
+<pre>
+  <b>
+    
+var a = 12;
+(function () {
+  alert(a);
+})();"
+  </b>
+
+</pre>
+<h2>Ans</h2>
+<h3>Output</h3>
+<b style="color: red;">12</b>
+<p><b>Reason :</b>we are  first create one valiable a here and thair value is 12 after creating here one IIFE function and alert it the popup show in the browser and also showing 12 thats value of a </p>
+
+<!-- question7>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
+<h2>Q7</h2>
+<pre>
+  <b>var a = 10;
+    var x = (function () {
+      var a = 12;
+      return function () {
+        alert(a);
+      };
+    })();
+    x();"</b>
+</pre>
+<h2>Ans</h2>
+<p><b>Reason :</b>we are create one variable a here and we are only initialize it after than we create one IIFE function  and initialize it variable x and inside it we create one more var a after we return function and after we alert or console it so first a is find the value in local scope where value of a is 12 so print it and function will end.</p>
+
+<!-- question8>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
+<h2>Q8</h2>
+<pre><b>"var globalVar = ""xyz"";
+
+  (function outerFunc(outerArg) {
+      var outerVar = 'a';
+      
+      (function innerFunc(innerArg) {
+      var innerVar = 'b';
+      
+      console.log(
+          ""outerArg = "" + outerArg + ""\n"" +
+          ""innerArg = "" + innerArg + ""\n"" +
+          ""outerVar = "" + outerVar + ""\n"" +
+          ""innerVar = "" + innerVar + ""\n"" +
+          ""globalVar = "" + globalVar);
+      
+      })(456);
+  })(123);"</b></pre>
+  <h2>Ans</h2>
+  <h3>Output</h3>
+  <b style="color: red;">123,456,a,b,xyz</b>
+  <p><b>Reason</b>we are creating here one global variable and after than we create function and inside this create one more function outer function has parameter thats name outerarg and inside parameter name is innerarg after than we after we create variables after each function than we console .we give argument here inner function value is 456 and also give for outer function thair value is 123</p>
+  <ol>
+    <li>First line print outerarg is 123</li>
+    <li>Second line print innerArg is 456</li>
+    <li>Third line print outerVar is "a"</li>
+    <li>Fourth line print outerarg is "b"</li>
+    <li>Fifth line print outerarg is "xyz"</li>
+  </ol>
+
+
+
+
+
+
+<script src="./script.js"></script>
+</body>
+</html>
